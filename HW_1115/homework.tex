@@ -1,0 +1,464 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{systeme}
+\usepackage{mathtools}
+
+\def\R{\mathbb{R}}
+\def\rank{\text{rank}}
+\DeclareMathOperator{\im}{im}
+
+\begin{document}
+
+\section{Problem 1}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &\begin{split}
+            T(a,b)=&(-2a+b,-10a+9b)\\
+            A=&\begin{bmatrix}
+                -2&1\\
+                -10&9\\
+            \end{bmatrix}\\
+            \det(A-I\lambda)=&(-2-\lambda)(9-\lambda)-(-10)\\
+            =&\lambda^2-7\lambda-8\\
+            =&0\\
+            \Rightarrow&\lambda=-1\lor\lambda=8\\
+        \end{split}\\
+        &\begin{split}
+            &\lambda=-1\\
+            &(A-I\lambda)v=\overrightarrow{0}\\
+            \Rightarrow&\begin{bmatrix}
+                -1&1\\
+                -10&10\\
+            \end{bmatrix}v=\overrightarrow{0}\\
+            \Rightarrow&v=\begin{bmatrix}
+                1\\
+                1\\
+            \end{bmatrix}\\
+            &\lambda=-8\\
+            &(A-I\lambda)v=\overrightarrow{0}\\
+            \Rightarrow&\begin{bmatrix}
+                -10&1\\
+                -10&1\\
+            \end{bmatrix}v=\overrightarrow{0}\\
+            \Rightarrow&v=\begin{bmatrix}
+                1\\
+                10\\
+            \end{bmatrix}\\
+            \Rightarrow&\beta=\{a+b,a+10b\}\\
+        \end{split}
+    \end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+\begin{equation*}
+    \begin{split}
+        &B={1,x,x^2,x^3}\\
+        &T(1)=-1\\
+        &T(x)=x-2\\
+        &T(x^2)=2x^2-2\\
+        &T(x^3)=3x^3+6x-8\\
+        &A=\begin{bmatrix}
+            -1&0&0&0\\
+            -2&1&0&0\\
+            -2&0&2&0\\
+            -8&6&0&3\\
+        \end{bmatrix}\\
+        &\det(A-I\lambda)=0\\
+        \Rightarrow&(-1-\lambda)(1-\lambda)(2-\lambda)(3-\lambda)=0\\
+        \Rightarrow&\lambda=-1\lor\lambda=1\lor\lambda=2\lor\lambda=3\\
+        &\lambda=-1\\
+        &\begin{bmatrix}
+            0&0&0&0\\
+            -2&2&0&0\\
+            -2&0&3&0\\
+            -8&6&0&4\\
+        \end{bmatrix}v=\overrightarrow{0}\\
+        \Rightarrow&v=\begin{bmatrix}
+            1\\
+            1\\
+            \frac{2}{3}\\
+            \frac{1}{2}\\
+        \end{bmatrix}\\
+        &\lambda=1\\
+        &\begin{bmatrix}
+            -2&0&0&0\\
+            -2&0&0&0\\
+            -2&0&1&0\\
+            -8&6&0&2\\
+        \end{bmatrix}v=\overrightarrow{0}\\
+        \Rightarrow&v=\begin{bmatrix}
+            0\\
+            -\frac{1}{3}\\
+            0\\
+            1\\
+        \end{bmatrix}\\
+        &\lambda=2\\
+        &\begin{bmatrix}
+            -3&0&0&0\\
+            -2&-1&0&0\\
+            -2&0&0&0\\
+            -8&6&0&1\\
+        \end{bmatrix}v=\overrightarrow{0} \\
+        \Rightarrow&v=\begin{bmatrix}
+            0\\
+            0\\
+            1\\
+            0\\
+        \end{bmatrix}\\
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \lambda=3\\
+        &\begin{bmatrix}
+            -4&0&0&0\\
+            -2&-2&0&0\\
+            -2&0&-1&0\\
+            -8&6&0&0\\
+        \end{bmatrix}v=\overrightarrow{0}\\
+        \Rightarrow&v=\begin{bmatrix}
+            0\\
+            0\\
+            0\\
+            1\\
+        \end{bmatrix}\\
+        \Rightarrow&\beta=\{1+x+\frac{2}{3}x^2+\frac{1}{2}x^3,-\frac{1}{3}x+x^3,x^2,x^3\}
+    \end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 2}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &B=\{1,x,x^2\}\\
+        &T(1)=3\\
+        &T(x)=3x+1\\
+        &T(x^2)=4x^2\\
+        \Rightarrow&A=\begin{bmatrix}
+            3&0&0\\
+            1&3&0\\
+            0&0&4\\
+        \end{bmatrix}\\
+        &\det(A-I\lambda)=0\\
+        \Rightarrow&(3-\lambda)^2(4-\lambda)=0\\
+        \Rightarrow&\lambda=3\lor\lambda=4\\
+        &\lambda=3\\
+        &\begin{bmatrix}
+            0&0&0\\
+            1&0&0\\
+            0&0&1\\
+        \end{bmatrix}v=\overrightarrow{0}\\
+        \Rightarrow&v=\begin{bmatrix}
+            0\\
+            1\\
+            0\\
+        \end{bmatrix}\\
+        &\lambda=4\\
+        &\begin{bmatrix}
+            -1&0&0\\
+            1&-1&0\\
+            0&0&0\\
+        \end{bmatrix}v=\overrightarrow{0}\\
+        \Rightarrow&v=\begin{bmatrix}
+            0\\
+            0\\
+            1\\
+        \end{bmatrix}\\
+        &\text{Eigenvectors cannot form a basis for }A\\
+        &T\text{ is not diagonizable}\\
+    \end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &\det(A-I\lambda)=0\\
+        &(-1-\lambda)\det\begin{bmatrix}
+            -2-\lambda&-3&1\\
+            1&2-\lambda&-1\\
+            -3&-3&2-\lambda\\
+        \end{bmatrix}=0\\
+        \Rightarrow&(\lambda+1)^2(\lambda-1)(\lambda+2)=0\\
+        \Rightarrow&\lambda=-1\lor\lambda=1\lor\lambda=-2\\
+        &\lambda=-1\\
+        &\begin{bmatrix}
+            0&-4&-4&3\\
+            0&-1&-3&1\\
+            0&1&-1&-1\\
+            0&-3&-3&3\\
+        \end{bmatrix}v=\overrightarrow{0}\\
+        \Rightarrow&v=\begin{bmatrix}
+            1\\
+            0\\
+            0\\
+            0\\
+        \end{bmatrix}\\
+        &\lambda=1\\
+        &\begin{bmatrix}
+            -2&-4&-4&3\\
+            0&-3&-3&1\\
+            0&1&-3&-1\\
+            0&-3&-3&1\\
+        \end{bmatrix}v=\overrightarrow{0}\\
+        \Rightarrow&v=\begin{bmatrix}
+            5\\
+            3\\
+            -1\\
+            6\\
+        \end{bmatrix}\\
+        &\lambda=-2\\
+        &\begin{bmatrix}
+            1&-4&-4&3\\
+            0&0&-3&1\\
+            0&1&0&-1\\
+            0&-3&-3&4\\
+        \end{bmatrix}v=\overrightarrow{0}\\
+        \Rightarrow&v=\begin{bmatrix}
+            7\\
+            3\\
+            1\\
+            3\\
+        \end{bmatrix}\\
+        &\text{Eigenvectors cannot form a basis for }A\\
+        &T\text{ is not diagonizable}\\
+    \end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 3}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &A=SDS^{-1}\\
+        \Leftrightarrow &AS=SD\\
+        \Leftrightarrow &S=A^{-1}SD\\
+        \Leftrightarrow &SD^{-1}=A^{-1}S\\
+        \Leftrightarrow &A^{-1}=SD^{-1}S^{-1}\\
+        \therefore &A=SDS^{-1}\Leftrightarrow A^{-1}=SD^{-1}S^{-1}\\
+        \Rightarrow &A\text{ is diagonizable } \Leftrightarrow \text{ } A^{-1} \text{ is diagonizable}
+    \end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &A=SDS^{-1}\\
+        &A^2=SD^2S^{-1}\\
+        &A^3=SD^3S^{-1}\\
+        &A^3+A^2+A^1+I\\
+        =&SD^3S^{-1}+SD^2S^{-1}+SDS^{-1}+SIS^{-1}\\
+        =&S(D^3S^{-1}+D^2S^{-1}+DS^{-1}+IS^{-1})\\
+        =&S(D^3+D^2+D+I)S^{-1}\\
+        \therefore& A^3+A^2+A^1+I\text{ is diagonizable}\\
+    \end{split}
+\end{equation*}
+
+\subsection{Question c}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &A=SDS^{-1}\\
+        \Leftrightarrow &A^T=(SDS^{-1})^T\\
+        \Leftrightarrow &A^T=(S^{-1})^TD^TS^T\\
+        &P\coloneqq(S^{-1})^T\\
+        &PP^{-1}=I\\
+        &(S^{-1})^TP^{-1}=I\\
+        &((S^{-1})^TP^{-1})^T=I\\
+        &(P^{-1})^TS^{-1}=I\\
+        &(P^{-1})^T=S\\
+        &P^{-1}=S^T\\
+        \Rightarrow&A^T=PD^TP^{-1}\\
+        \therefore &A=SDS^{-1}\Leftrightarrow A^T=PD^TP^{-1}\\
+        &A\text{ is diagonizable } \Leftrightarrow \text{ } A^T \text{ is diagonizable}
+    \end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 4}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        Tv=&\lambda v\\
+        Tv=&T^2v\\
+        =&T\cdot Tv\\
+        =&T\lambda v\\
+        =&\lambda Tv\\
+        =&\lambda \lambda v\\
+        =&\lambda^2v\\
+        =&\lambda v\\
+        \Rightarrow &\lambda^2-\lambda=0 \rightarrow v\ne 0\\
+        \Rightarrow &\lambda = 0\lor \lambda=1\\
+        &\text{Since all the eigenvalues are distinct, }T\text{ is diagonizable}\\
+    \end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &T(V)\coloneqq WV\\
+        \Rightarrow &WV=V^T\\
+        &T(WV)=(V^T)^T=V=WWV\\
+        \Rightarrow &WW=I\\
+        &Wv=\lambda v\\
+        \Rightarrow &WWv=W\lambda v=\lambda Wv=\lambda^2v\\
+        &WW=I\Rightarrow WWv=v\\
+        \Rightarrow \lambda^2v=v\\
+        \Rightarrow \lambda =\pm 1\\
+        &\text{Since all the eigenvalues are distinct, }T\text{ is diagonizable}\\
+    \end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 5}
+
+~
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &D(f(x))\coloneqq Af(x)\\
+        &D(e^{\lambda x})=Ae^{\lambda x}\\
+        &(e^{\lambda x})'=\lambda e^{\lambda x}\\
+        \Rightarrow &Ae^{\lambda x}=\lambda e^{\lambda x}\\
+        &Af_\lambda(x)=\lambda f_\lambda(x)\\
+        \Rightarrow& f_\lambda(x)\text{ are eigenvectors}\\
+    \end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &e^{\lambda x} = \sum^\infty_{n=0}\frac{x^n}{n!}\\
+        &\text{Take the first }n-1 \text{ terms of the expansion}{T^{n-1}}_\lambda\text{ as the approximation to } e^{\lambda x}\\
+        &\begin{bmatrix}
+            f_{\lambda_{1}}x\\
+            f_{\lambda_{2}}x\\
+            f_{\lambda_{3}}x\\
+            \vdots\\
+            f_{\lambda_{n}}x\\
+        \end{bmatrix}\approx \begin{bmatrix}
+            {T^{n-1}}_{\lambda_1}\\
+            {T^{n-1}}_{\lambda_2}\\
+            {T^{n-1}}_{\lambda_3}\\
+            \vdots\\
+            {T^{n-1}}_{\lambda_n}\\
+        \end{bmatrix}=\underbrace{\begin{bmatrix}
+            1&\lambda_{1}x&(\lambda_{1}x)^2&\cdots&(\lambda_{1}x)^{n-1}\\
+            1&\lambda_{2}x&(\lambda_{2}x)^2&\cdots&(\lambda_{2}x)^{n-1}\\
+            1&\lambda_{3}x&(\lambda_{3}x)^2&\cdots&(\lambda_{3}x)^{n-1}\\
+            \vdots &\vdots&\vdots&\ddots &\vdots \\
+            1&\lambda_{n}x&(\lambda_{n}x)^2&\cdots&(\lambda_{n}x)^{n-1}\\
+        \end{bmatrix}}_V\begin{bmatrix}
+            \frac{1}{0!}\\
+            \frac{1}{1!}\\
+            \frac{1}{2!}\\
+            \vdots\\
+            \frac{1}{(n-1)!}\\
+        \end{bmatrix}\\
+        &\det(V)=\prod_{0\leqslant i<j\leqslant n}(\lambda_jx-\lambda_ix)\\
+        &\lambda_1,\ldots ,\lambda_n\text{ are distinct values}\implies \lambda_jx-\lambda_ix\ne0\\
+        \Rightarrow&\det(V)\ne0\\
+        \Rightarrow &V \text{ is linear independent}\\
+        &\text{By induction: }\nexists k\in\mathbb{Z}^+ : \exists m\in\mathbb{Z}^+: {T^k}_{\lambda_m}=\sum_{i=0}^{m-1}a_i{T^k}  _{\lambda_{m-1}}\\
+        \Rightarrow &\begin{bmatrix}
+            f_{\lambda_{1}}x\\
+            f_{\lambda_{2}}x\\
+            \vdots\\
+            f_{\lambda_{n}}x\\
+        \end{bmatrix}\text{ is linear independent}\\
+    \end{split}
+\end{equation*}
+
+\subsection{Question c}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &\text{Set }D(f(x))=Af(x)=\lambda f(x)\\
+        &D(f(x))=f'(x)\\
+        \Rightarrow&f'(x)=\lambda f(x)\\
+        &y\coloneqq f(x)\\
+        \Rightarrow&\frac{dy}{dx} -\lambda y=0\\
+        &I=e^{\int -\lambda \,dx }\\
+        \Rightarrow&I=e^{-\lambda x}\\
+        &e^{-\lambda x}\frac{dy}{dx}-e^{-\lambda x}\lambda y=0\\
+        &\frac{d}{dx}(e^{-\lambda x}y)=0\\
+        &e^{-\lambda x}y=C\\
+        &y=Ce^{\lambda x}\\
+        \Rightarrow& f(x)=Cf_\lambda (x)\\
+    \end{split}
+\end{equation*}
+
+\subsection{Question 4}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &\forall \lambda \in \mathbb{Z}^+ \land C \in \mathbb{R} : Af(x)=\lambda f(x), \text{ where }f(x)=Ce^{\lambda x}\\
+        &\text{But }Ce^{\lambda x}\text{ are linear dependent, with only one independent vector}\\
+        \Rightarrow&\text{There is one eigenvector }f_\lambda(x)=e^{\lambda x}\text{ for every }\lambda\\
+        &\text{As proved before: }f_\lambda(x)\text{ with different }\lambda\text{ are linear independent}\\
+        \Rightarrow&\text{It can form an ordered basis for }D\\
+        \Rightarrow&D\text{ is diagonizable}
+    \end{split}
+\end{equation*}
+
+\newpage
+
+\section{Reference}
+
+~
+
+Jeffery Shu
+
+~
+
+Frank Zhu
+\end{document}

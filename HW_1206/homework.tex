@@ -1,0 +1,348 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{systeme}
+\usepackage{mathtools}
+\usepackage{hyperref}
+
+\def\R{\mathbb{R}}
+\def\rank{\text{rank}}
+\def\proj{\text{proj}}
+\DeclareMathOperator{\im}{im}
+
+\begin{document}
+
+\section{Problem 1}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &\begin{cases}
+            v_1=(0,1,1)\\
+            v_2=(1,1,1)\\
+            v_3=(1,-2,2)\\
+        \end{cases}\\
+        u_1=&v_1=(0,1,1)\\
+        u_2=&v_2-\proj_{u_1}v_2\\
+        =&(1,1,1)-\frac{\langle(1,1,1),(0,1,1)\rangle}{\langle(0,1,1),(0,1,1)\rangle}(0,1,1)\\
+        =&(1,1,1)-(0,1,1)\\
+        =&(1,0,0)\\
+        u_3=&v_3-\proj_{u_1}v_3-\proj_{u_2}v_3\\
+        =&(1,-2,2)-\frac{\langle(1,-2,2),(0,1,1)\rangle}{\langle(0,1,1),(0,1,1)\rangle}(0,1,1)-\frac{\langle(1,-2,2),(1,0,0)\rangle}{\langle(1,0,0),(1,0,0)\rangle}(1,0,0)\\
+        =&(1,-2,2)-(0,0,0)-(1,0,0)\\
+        =&(0,-2,2)\\
+        e_1=&\frac{u_1}{\|u_1\|}\\
+        =&(0,\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2})\\
+        e_2=&\frac{u_2}{\|u_2\|}\\
+        =&(1,0,0)\\
+        e_3=&\frac{u_3}{\|u_3\|}\\
+        =&(0,-\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2})\\
+        \Rightarrow&\overline{\beta}=\{(0,\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}),(1,0,0),(0,-\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2})\}\\
+    \end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &\begin{cases}
+            v_1=1+x^2\\
+            v_2=-1+x\\
+            v_3=1+x\\
+        \end{cases}\\
+        u_1=&v_1=1+x^2\\
+        u_2=&v_2-\proj_{u_1}v_2\\
+        =&-1+x-\frac{\langle-1+x,1+x^2\rangle}{\langle1+x^2,1+x^2\rangle}1+x^2\\
+        =&-1+x+\frac{5}{16}(1+x^2)\\
+        =&-\frac{11}{16}+x+\frac{5}{16}x^2\\
+        u_3=&v_3-\proj_{u_1}v_3-\proj_{u_2}v_3\\
+        =&1+x-\frac{\langle1+x,1+x^2\rangle}{\langle1+x^2,1+x^2\rangle}(1+x^2)-\frac{\langle1+x,-\frac{11}{16}+x+\frac{5}{16}x^2\rangle}{\langle-\frac{11}{16}+x+\frac{5}{16}x^2,-\frac{11}{16}+x+\frac{5}{16}x^2\rangle}(-\frac{11}{16}+x+\frac{5}{16}x^2)\\
+        =&-\frac{38}{203}+\frac{32}{29}x-\frac{220}{203}x^2\\
+        e_1=&\frac{u_1}{\|u_1\|}\\
+        =&\frac{\sqrt{15}}{2\sqrt{7}}+\frac{\sqrt{15}}{2\sqrt{7}}x^2\\
+        e_2=&\frac{u_2}{\|u_2\|}\\
+        =&-\frac{11\sqrt{3}}{2\sqrt{29}}+\frac{8\sqrt{3}}{\sqrt{29}}x+\frac{5\sqrt{3}}{2\sqrt{29}}x^2\\
+        e_3=&\frac{u_3}{\|u_3\|}\\
+        =&-\frac{19\sqrt{3}}{\sqrt{203}}+\frac{16\sqrt{21}}{\sqrt{29}}x-\frac{110\sqrt{3}}{\sqrt{203}}x^2\\
+        \Rightarrow&\overline{\beta}=\{\frac{\sqrt{15}}{2\sqrt{7}}+\frac{\sqrt{15}}{2\sqrt{7}}x^2,-\frac{11\sqrt{3}}{2\sqrt{29}}+\frac{8\sqrt{3}}{\sqrt{29}}x+\frac{5\sqrt{3}}{2\sqrt{29}}x^2,-\frac{19\sqrt{3}}{\sqrt{203}}+\frac{16\sqrt{21}}{\sqrt{29}}x-\frac{110\sqrt{3}}{\sqrt{203}}x^2\}\\
+    \end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 2}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &x\coloneqq(x_1,x_2,x_3,x_4)\\
+        &\begin{cases}
+            \langle x,(1,0,1,2)\rangle =0\\
+            \langle x,(1,-1,0,1)\rangle=0\\
+        \end{cases}\\
+        \Rightarrow&\begin{cases}
+            x_1+x_3+2x_4=0\\
+            x_1-x_2+x_4=0\\
+        \end{cases}\\
+        \Rightarrow&\begin{cases}
+            x_1=x_1\\
+            x_2=x_1+x_4\\
+            x_3=-x_1-2x_4\\
+            x_4=x_4
+        \end{cases}\\
+        \Rightarrow& W^\perp=\text{Span}\{(1,1,-1,0),(0,1,-2,1)\}\\
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        &W:\\
+        u_1&=v_1=(1,0,1,2)\\
+        u_2&=v_2-\proj_{u_1}v_2\\
+        &=(1,-1,0,1)-\frac{\langle(1,-1,0,1),(1,0,1,2)\rangle}{\langle(1,0,1,2),(1,0,1,2)\rangle}(1,0,1,2)\\
+        &=(1,-1,0,1)-\frac{1}{2}(1,0,1,2)\\
+        &=(\frac{1}{2},-1,-\frac{1}{2},0)\\
+        e_1&=\frac{u_1}{\|u_1\|}\\
+        &=(\frac{1}{\sqrt{6}},0,\frac{1}{\sqrt{6}},\frac{2}{\sqrt{6}})\\
+        e_2&=\frac{u_2}{\|u_2\|}\\
+        &=(\frac{1}{\sqrt{6}},-\frac{2}{\sqrt{6}},-\frac{1}{\sqrt{6}},0)\\
+        &\Rightarrow\text{Orthonormal basis for }W:\{(\frac{1}{\sqrt{6}},0,\frac{1}{\sqrt{6}},\frac{2}{\sqrt{6}}),(\frac{1}{\sqrt{6}},-\frac{2}{\sqrt{6}},-\frac{1}{\sqrt{6}},0)\}\\
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        &W^\perp:\\
+        u_1&=v_1=(1,1,-1,0)\\
+        u_2&=v_2-\proj_{u_1}v_2\\
+        &=(0,1,-2,1)-\frac{\langle(0,1,-2,1),(1,1,-1,0)\rangle}{\langle(1,1,-1,0),(1,1,-1,0)\rangle}(1,1,-1,0)\\
+        &=(0,1,-2,1)-(1,1,-1,0)\\
+        &=(-1,0,-1,1)\\
+        e_1&=\frac{u_1}{\|u_1\|}\\
+        &=(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},-\frac{1}{\sqrt{3}},0)\\
+        e_2&=\frac{u_2}{\|u_2\|}\\
+        &=(-\frac{1}{\sqrt{3}},0,-\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}})\\
+        &\Rightarrow\text{Orthonormal basis for }W^\perp:\{(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},-\frac{1}{\sqrt{3}},0),(-\frac{1}{\sqrt{3}},0,-\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}})\}\\
+    \end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &w_1\coloneqq a(\frac{1}{\sqrt{6}},0,\frac{1}{\sqrt{6}},\frac{2}{\sqrt{6}})+b(\frac{1}{\sqrt{6}},-\frac{2}{\sqrt{6}},-\frac{1}{\sqrt{6}},0)\\
+        &w_2\coloneqq c(\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}},-\frac{1}{\sqrt{3}},0)+d(-\frac{1}{\sqrt{3}},0,-\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}})\\
+        &w_1+w_2=(1,1,1,1)\\
+        \Rightarrow&\begin{cases}
+            \frac{1}{\sqrt{6}}a+\frac{1}{\sqrt{6}}b+\frac{1}{\sqrt{3}}c-\frac{1}{\sqrt{3}}d=1\\
+            -\frac{2}{\sqrt{6}}b+\frac{1}{\sqrt{3}}c=1\\
+            \frac{1}{\sqrt{6}}a-\frac{1}{\sqrt{6}}b-\frac{1}{\sqrt{3}}c-\frac{1}{\sqrt{3}}d=1\\
+            \frac{2}{\sqrt{6}}a+\frac{1}{\sqrt{3}}d=1\\
+        \end{cases}\\
+        \Rightarrow&\begin{cases}
+            a=\frac{4}{\sqrt{6}}\\
+            b=-\frac{2}{\sqrt{6}}\\
+            c=\frac{1}{\sqrt{3}}\\
+            d=-\frac{1}{\sqrt{3}}\\
+        \end{cases}\\
+        \Rightarrow&\begin{cases}
+            w_1=(\frac{1}{3},\frac{2}{3},1,\frac{4}{3})\\
+            w_2=(\frac{2}{3},\frac{1}{3},0,-\frac{1}{3})\\
+        \end{cases}
+    \end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 3}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &u\in W\\
+        \Rightarrow&\langle u,v\rangle=0\forall v\in W^\perp\\
+        &\langle v, w\rangle=0\forall w\in{W^\perp}^\perp\\
+        \Rightarrow&W\subseteq {W^\perp}^\perp\\
+        &\text{Let }W \text{ be a subspace over }V \text{ with dimension }n\\
+        &\dim(W)+\dim(W^\perp)=n\\
+        &\dim(W^\perp)+\dim({W^\perp}^\perp)=n\\
+        \Rightarrow&\dim(W)+\dim(W^\perp)=\dim(W^\perp)+\dim({W^\perp}^\perp)\\
+        \Rightarrow&\dim(W)=\dim({W^\perp}^\perp)\\
+        \Rightarrow&W={W^\perp}^\perp\\
+    \end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+~
+
+\subsubsection*{$(W_1+W_2)^\perp\subseteq {W_1}^\perp\cap {W_2}^\perp$}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &v\in (W_1+W_2)^\perp\\
+        \Rightarrow&\langle v,w_1+w_2\rangle=0\forall w_1\in W_1\land w_2\in W_2\\
+        &\text{Let } w_1=0:\\
+        &\langle v,w_2\rangle=0\implies v\in {W_2}^\perp\\
+        &\text{Similarly } v\in {W_1}^\perp\\
+        \Rightarrow&v\in{W_1}^\perp\cap {W_2}^\perp\\
+        \Rightarrow&(W_1+W_2)^\perp\subseteq {W_1}^\perp\cap {W_2}^\perp\\
+    \end{split}
+\end{equation*}
+
+\subsubsection*{${W_1}^\perp\cap {W_2}^\perp\subseteq (W_1+W_2)^\perp$}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &v\in{W_1}^\perp\cap {W_2}^\perp\\
+        \Rightarrow&\langle v,w_1\rangle=0\land \langle v,w_2\rangle=0\forall w_1\in W_1\land w_2\in W_2\\
+        \Rightarrow&\langle v,w_1\rangle+\langle v,w_2\rangle =0\\
+        \Rightarrow&\langle v,w_1+w_2\rangle=0\\
+        \Rightarrow&v\in (W_1+W_2)^\perp\\
+        \Rightarrow&{W_1}^\perp\cap {W_2}^\perp\subseteq (W_1+W_2)^\perp\\
+        &(W_1+W_2)^\perp\subseteq {W_1}^\perp\cap {W_2}^\perp\land{W_1}^\perp\cap {W_2}^\perp\subseteq (W_1+W_2)^\perp\\
+        \Rightarrow&(W_1+W_2)^\perp= {W_1}^\perp\cap {W_2}^\perp\\
+    \end{split}
+\end{equation*}
+
+\subsection{Question c}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &(W_1\cap W_2)^\perp\\
+        =&({W_1^\perp}^\perp\cap{W_2^\perp}^\perp)^\perp\\
+        =&((W_1^\perp+W_2^\perp)^\perp)^\perp\\
+        =&W_1^\perp+W_2^\perp\\
+        \Rightarrow&(W_1\cap W_2)^\perp=W_1^\perp+W_2^\perp\\
+    \end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 4}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &v=\sum^n_{i=1}c_iv_i\\
+        \Rightarrow&\langle v,v_i\rangle=\langle\sum^n_{i=1}c_iv_i,v_i\rangle=c_i\langle v_i,v_i\rangle\leftarrow v_i\perp v_j\forall i\ne j\in \R\\
+        \Rightarrow&c_i=\frac{\langle v,v_i\rangle}{\|v_i\|^2}\\
+        &\langle v,v\rangle=\langle\sum^n_{i=1}c_iv_i,\sum^n_{i=1}c_iv_i\rangle\\
+        =&\sum_{i=1}^n{c_i}^2\|v_i\|^2\\
+        =&\sum_{i=1}^n\frac{\langle v,v_i\rangle^2}{\|v_i\|^2}\\
+        =&\|v\|^2\\
+        &\|v_i\|^2=1\leftarrow \beta\text{ is orthonormal}\\
+        \Rightarrow&\|v\|=\sqrt{\sum_{i=1}^n\langle v,v_i\rangle^2}\\
+    \end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &u=\sum^n_{i=1}d_iv_i\\
+        \Rightarrow&d_i=\frac{\langle u,v_i\rangle}{\|v_i\|^2}\\
+        &\langle u,v\rangle=\langle\sum^n_{i=1}d_iv_i\sum^n_{i=1}c_iv_i\rangle\\
+        =&\sum^n_{i=1}c_id_i\|v_i\|^2\\
+        =&\sum^n_{i=1}\langle v,v_i\rangle\langle u,v_i\rangle\leftarrow \|v_i\|^2=1\\
+        \Rightarrow&\langle u,v\rangle=\sum^n_{i=1}\langle v,v_i\rangle\langle u,v_i\rangle\\
+    \end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 5}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &v=\sum^n_{i=1}c_iv_i\\
+        \Rightarrow&\langle v,v_i\rangle=\langle\sum^n_{i=1}c_iv_i,v_i\rangle=c_i\langle v_i,v_i\rangle\leftarrow v_i\perp v_j\forall i\ne j\in \R\\
+        \Rightarrow&c_i=\frac{\langle v,v_i\rangle}{\|v_i\|^2}\\
+        &\|v_1\|^2=1\\
+        \Rightarrow&c_i=\langle v,v_i\rangle\\
+        \Rightarrow&v=\sum^n_{i=1}\langle v,v_i\rangle v_i\\
+        \Rightarrow&f(v)=f(\sum^n_{i=1}\langle v,v_i\rangle v_i)\\
+        &f\text{ is a linear transformation}\\
+        \Rightarrow&f(v)=\sum^n_{i=1}\langle v,v_i\rangle f(v_i)\\
+        \Rightarrow&f(v)=\langle v,\sum^n_{i=1}f(v_i)v_i\rangle=\langle v,w\rangle\\
+        \Rightarrow&w=\sum^n_{i=1}f(v_i)v_i\\
+        &w\text{ is unique because }v_i\text{ are orthonormal, there cannnot be another way to form }w\text{ of the same value}\\
+    \end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+~
+
+\begin{equation*}
+    \begin{split}
+        &\langle p(x),g(x)\rangle=p(0)g(0)+p(1)g(1)+p(2)g(2)\\
+        &f(p(x))=\int^1_{-1}p(x)\\
+        &\beta=\{1,x,x^2\}\\
+        &u_1=v_1=1\\
+        &u_2=v_2-\proj_{u_1}v_2\\
+        =&x-\frac{\langle x,1\rangle}{\langle1,1\rangle}1\\
+        =&-1+x\\
+        &u_3=v_3-\proj_{u_1}v_3-\proj_{u_2}v_3\\
+        =&x^2-\frac{5}{3}-2(x-1)\\
+        =&\frac{1}{3}-2x+x^2\\
+        &e_1=\frac{u_1}{\|u_1\|}\\
+        =&\frac{1}{\sqrt{3}}\\
+        &e_2=\frac{u_2}{\|u_2\|}\\
+        =&-\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}x\\
+        &e_3=\frac{u_3}{\|u_3\|}\\
+        =&\frac{\sqrt{6}}{6}-\sqrt{6}x+\frac{\sqrt{6}}{2}x^2\\
+        \Rightarrow&\beta'=\{\frac{1}{\sqrt{3}},-\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}x,\frac{\sqrt{6}}{6}-\sqrt{6}x+\frac{\sqrt{6}}{2}x^2\}=\{v_1,v_2,v_3\}\\
+        &g(x)=\sum^3_{i=1}f(v_i)v_i\\
+        =&\frac{1}{3}\int_{-1}^{1}\frac{1}{3}dx+\int_{-1}^{1}-\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}xdx(-\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}x)+\int_{-1}^{1}\frac{\sqrt{6}}{6}-\sqrt{6}x+\frac{\sqrt{6}}{2}x^2dx(\frac{\sqrt{6}}{6}-\sqrt{6}x+\frac{\sqrt{6}}{2}x^2)\\
+        =&\frac{2}{9}-\sqrt{2}(-\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}}x)+2\sqrt{\frac{2}{3}}(\frac{\sqrt{6}}{6}-\sqrt{6}x+\frac{\sqrt{6}}{2}x^2)\\
+        =&\frac{17}{9}-5x+2x^2\\
+        \Rightarrow&g(x)=\frac{17}{9}-5x+2x^2\\
+    \end{split}
+\end{equation*}
+
+\newpage
+
+\section{Reference}
+
+~
+
+Jeffery Shu
+
+~
+
+Frank Zhu
+
+
+\end{document}

@@ -1,0 +1,409 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\def\R{\mathbb{R}}
+\def\Trace{\text{Trace}}
+
+\begin{document}
+
+\section{Problem 1}
+
+~
+
+\begin{equation*}
+\begin{split}
+T(p_1)=&(p_1(1),\int^1_0p_1(x)dx)\\
+=&(3,\left[\frac{1}{3}x^3+\frac{1}{2}x^2+x\right]^1_0)\\
+=&(3,\frac{11}{6})\\
+=&-\frac{11}{6}(1,-1)+\frac{29}{12}(2,0)\\
+T(p_2)=&(p_2(1),\int^1_0p_2(x)dx)\\
+=&(2,\left[\frac{1}{2}x^2+x\right]^1_0)\\
+=&(2,\frac{3}{2})\\
+=&-\frac{3}{2}(1,-1)+\frac{7}{4}(2,0)\\
+T(p_3)=&(p_3(1),\int^1_0p_3(x)dx)\\
+=&(1,\left[x\right]^1_0)\\
+=&(1,1)\\
+=&-(1,-1)+(2,0)\\
+\Rightarrow \left[T\right]^{\gamma_1}_{\beta_1}=&\begin{bmatrix}
+-\frac{11}{6}&-\frac{3}{2}&-1\\
+\frac{29}{12}&\frac{7}{4}&1\\
+\end{bmatrix}\\
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+T(f_1)=&(f_1(1),\int^1_0f_1(x)dx)\\
+=&(0,\left[\frac{1}{3}x^3-\frac{1}{2}x^2\right]^1_0)\\
+=&(0,-\frac{1}{6})\\
+=&\frac{1}{6}(-1,2)+\frac{1}{6}(1,-3)\\
+T(f_2)=&(f_2(1),\int^1_0f_2(x)dx)\\
+=&(2,\left[\frac{1}{2}x^2+x\right]^1_0)\\
+=&(2,\frac{3}{2})\\
+=&-\frac{15}{2}(-1,2)-\frac{11}{2}(1,-3)\\
+T(f_3)=&(f_3(1),\int^1_0f_3(x)dx)\\
+=&(2,\left[x^2\right]^1_0)\\
+=&(2,1)\\
+=&-7(-1,2)-5(1,-3)\\
+\Rightarrow \left[T\right]^{\gamma_2}_{\beta_2}=&\begin{bmatrix}
+\frac{1}{6}&-\frac{15}{2}&-7\\
+\frac{1}{6}&-\frac{11}{2}&-5\\
+\end{bmatrix}\\
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+p_1(x)=&x^2+x+1\\
+=&1\cdot(x^2-x)+1\cdot(x+1)+\frac{1}{2}(2x)\\
+p_2(x)=&x+1\\
+=&0\cdot(x^2-x)+1\cdot(x+1)+0\cdot(2x)\\
+p_3(x)=&1\\
+=&0\cdot(x^2-x)+1\cdot(x+1)-\frac{1}{2}\cdot(2x)\\
+\Rightarrow Q^{\beta_2}_{\beta_1}=&\begin{bmatrix}
+1&0&0\\
+1&1&1\\
+\frac{1}{2}&0&-\frac{1}{2}\\
+\end{bmatrix}\\
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+(-1,2)=&-2\cdot(1,-1)+\frac{1}{2}\cdot(2,0)\\
+(1,-3)=&3\cdot(1,-1)-1\cdot(2,0)\\
+\Rightarrow Q^{\gamma_1}_{\gamma_2}=&\begin{bmatrix}
+-2&3\\
+\frac{1}{2}&-1\\
+\end{bmatrix}\\
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+&Q^{\gamma_1}_{\gamma_2} \left[T\right]^{\gamma_2}_{\beta_2} Q^{\beta_2}_{\beta_1}\\
+=&\begin{bmatrix}
+-2&3\\
+\frac{1}{2}&-1\\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{6}&-\frac{15}{2}&-7\\
+\frac{1}{6}&-\frac{11}{2}&-5\\
+\end{bmatrix}
+\begin{bmatrix}
+1&0&0\\
+1&1&1\\
+\frac{1}{2}&0&-\frac{1}{2}\\
+\end{bmatrix}\\
+=&\begin{bmatrix}
+\frac{1}{6}&-\frac{3}{2}&-1\\
+\frac{1}{12}&\frac{27}{4}&\frac{3}{2}\\
+\end{bmatrix}
+\begin{bmatrix}
+1&0&0\\
+1&1&1\\
+\frac{1}{2}&0&-\frac{1}{2}\\
+\end{bmatrix}\\
+=&\begin{bmatrix}
+-\frac{11}{6}&-\frac{3}{2}&-1\\
+\frac{29}{12}&\frac{7}{4}&1\\
+\end{bmatrix}\\
+=&\left[T\right]^{\gamma_1}_{\beta_1}\\
+\Rightarrow& \left[T\right]^{\gamma_1}_{\beta_1} =Q^{\gamma_1}_{\gamma_2} \left[T\right]^{\gamma_2}_{\beta_2} Q^{\beta_2}_{\beta_1}\\
+\end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 2}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+\begin{split}
+L_A(p_1)=&\begin{bmatrix}
+1&1&-1\\
+2&0&1\\
+1&1&0\\
+\end{bmatrix}\begin{bmatrix}
+1\\
+1\\
+0\\
+\end{bmatrix}\\
+=&\begin{bmatrix}
+2\\
+2\\
+2\\
+\end{bmatrix}\\
+=&\frac{12}{5}\begin{bmatrix}
+1\\
+1\\
+0\\
+\end{bmatrix}+\frac{2}{5}\begin{bmatrix}
+1\\
+-1\\
+1\\
+\end{bmatrix}-\frac{4}{5}\begin{bmatrix}
+1\\
+0\\
+-2\\
+\end{bmatrix}\\
+L_A(p_2)=&\begin{bmatrix}
+1&1&-1\\
+2&0&1\\
+1&1&0\\
+\end{bmatrix}\begin{bmatrix}
+1\\
+-1\\
+1\\
+\end{bmatrix}\\
+=&\begin{bmatrix}
+-1\\
+3\\
+0\\
+\end{bmatrix}\\
+=&\frac{7}{5}\begin{bmatrix}
+1\\
+1\\
+0\\
+\end{bmatrix}-\frac{8}{5}\begin{bmatrix}
+1\\
+-1\\
+1\\
+\end{bmatrix}-\frac{4}{5}\begin{bmatrix}
+1\\
+0\\
+-2\\
+\end{bmatrix}\\
+L_A(p_3)=&\begin{bmatrix}
+1&1&-1\\
+2&0&1\\
+1&1&0\\
+\end{bmatrix}\begin{bmatrix}
+1\\
+0\\
+-2\\
+\end{bmatrix}\\
+=&\begin{bmatrix}
+3\\
+0\\
+1\\
+\end{bmatrix}\\
+=&\frac{7}{5}\begin{bmatrix}
+1\\
+1\\
+0\\
+\end{bmatrix}+\frac{7}{5}\begin{bmatrix}
+1\\
+-1\\
+1\\
+\end{bmatrix}+\frac{1}{5}\begin{bmatrix}
+1\\
+0\\
+-2\\
+\end{bmatrix}\\
+\Rightarrow& \left[L_A\right]^\beta_\beta=\begin{bmatrix}
+\frac{12}{5}&\frac{7}{5}&\frac{7}{5}\\
+\frac{2}{5}&-\frac{8}{5}&\frac{7}{5}\\
+-\frac{4}{5}&-\frac{4}{5}&\frac{1}{5}\\
+\end{bmatrix}\\
+\end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+\begin{equation*}
+\begin{split}
+\left[L_A\right]_\beta=&\left[I\right]^\beta_\alpha\left[L_A\right]_\alpha\left[I\right]^\alpha_\beta\rightarrow \alpha \text{ is the standard basis on } \mathbb{F}^3\\
+=&Q^{-1}AQ\\
+\Rightarrow Q=&\left[I\right]^\alpha_\beta \\
+=&\begin{bmatrix}
+1&1&1\\
+1&-1&0\\
+0&1&-2\\
+\end{bmatrix}\\
+\end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 3}
+
+\subsection{Question a}
+
+~
+
+The reflection is on the $xy$ plane, so the $x$ and $y$ coordinates are the same, with $z$ flips the sign.
+
+So the formula is $R(x,y,z)=(x,y,-z)$
+
+\subsection{Question b}
+
+~
+
+\begin{equation*}
+\begin{split}
+x+2y+3z=&0\\
+x=&-2y-3z\\
+\Rightarrow (x,y,z)=&(-2y-3z,y,z)\\
+=&y(-2,1,0)+z(-3,0,1)\\
+\end{split}
+\end{equation*}
+
+So the basis for $P$ is $\left\{(-2,1,0),(-3,0,1)\right\}$, the normal vector is $(1,2,3)$.
+
+\subsection{Question c}
+
+~
+
+\begin{equation*}
+\begin{split}
+D_p=&\frac{(x,y,z)\cdot(1,2,3)}{\lvert<1,2,3>\rvert^2}\\
+R_p(x,y,z)=&(x,y,z)-2D_p\cdot(1,2,3)\\
+=&(x,y,z)-2\cdot\frac{(x,y,z)\cdot(1,2,3)}{\lvert<1,2,3>\rvert^2}\cdot(1,2,3)\\
+\end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 4}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+\begin{split}
+f(A+B)=&\Trace(A+B)\\
+=&\Trace(A)+\Trace(B)\\
+=&f(A)+f(B)\\
+f(cA)=&\Trace(cA)\\
+=&c\Trace(A)\\
+=&cf(A)\\
+\end{split}
+\end{equation*}
+
+Therefore, $\Trace(A)$ fits the properties of linear functional and in $V^*$.
+
+\subsection{Question b}
+
+~
+
+\begin{proof}
+
+Assume there exists matrices: $AB-BA=I$
+
+\begin{equation*}
+\begin{split}
+\Trace(AB-BA)=&\Trace(I)\\
+\Trace(AB)-\Trace(BA)=&\Trace(I)\\
+\end{split}
+\end{equation*}
+
+$\Trace(AB)-\Trace(BA)$ is the trace of commutator, which is 0.
+
+However, in this case, we assume that $\Trace(AB)-\Trace(BA)=\Trace(I)$, which is not 0.
+
+There is the contradiction.
+
+~
+
+Therefore there cannot be matrices that $AB-BA=I$.
+\end{proof}
+
+\subsection{Question c}
+
+~
+
+Define $p(x)=g(x)-g(I)f(x)$
+
+We need to first prove the commutative property for $p(x)$
+
+\begin{equation*}
+\begin{split}
+p(AB)=&g(AB)-g(I)f(AB)\\
+=&g(BA)-g(I)f(BA)\\
+=&h(BA)\\
+\end{split}
+\end{equation*}
+
+Then substitute $x$ as $kI$, where $k$ is an arbitrary real number and $I$ is identity matrix.
+
+\begin{equation*}
+\begin{split}
+p(kI)=&g(kI)-g(I)f(kI)\\
+=&kg(I)-kg(I)f(I)\\
+=&0\\
+\end{split}
+\end{equation*}
+
+Therefore, $p(x)=0 \forall x\in V$
+
+\begin{equation*}
+\begin{split}
+g(x)-g(I)f(x)=&0\\
+g(x)=&g(I)f(x)\\
+\end{split}
+\end{equation*}
+
+Since $g(I)$ is a constant, $g(x)=cf(x)$
+\newpage
+
+\section{Problem 5}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+\begin{split}
+f_1(x)&=\begin{cases}
+1,x=-1\\
+0,x\ne -1\\
+\end{cases}\\
+f_2(x)&=\begin{cases}
+1,x=2\\
+0,x\ne-2\\
+\end{cases}\\
+\end{split}
+\end{equation*}
+
+In this case, both functions satisfy the requirements, however, they are linear independent because they have different non-zero points, for example, there is never a $k$ for $kf_1(2)=f_2(2)$.
+
+\subsection{Question b}
+
+~
+
+Assume $q_1(x)=1$ and $q_2(x)=\frac{1}{2}x-\frac{1}{4}$
+
+\begin{equation*}
+\begin{split}
+f(q_1(x))&=\int^1_01dx=1\\
+g(q_2(x))&=q_2(1)-q_2(-1)=1\\
+f(q_2(x))&=\int^1_0\frac{1}{2}x-\frac{1}{4}dx=0\\
+g(q_1(x))&=q_1(1)-q_1(-1)=0\\
+\end{split}
+\end{equation*}
+
+The functions satisfy the requirements. and they are linear independent because they are in different dimensions so that they are not scalar multiples.
+
+\newpage
+
+\section{Reference}
+
+\subsection{Collaborators}
+
+~
+
+Frank Zhu
+
+~
+
+Jeffery Shu
+\end{document}

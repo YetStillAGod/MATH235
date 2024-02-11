@@ -1,0 +1,629 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\def\R{\mathbb{R}}
+\DeclareMathOperator{\im}{im}
+
+\begin{document}
+
+\section{Problem 1}
+
+\subsection{Question a}
+
+~
+
+According to the problem, we can have the equations:
+
+\begin{equation*}
+\begin{split}
+T(x+1)&=\alpha_1 (x^2+x+1)+\beta_1 (x-1)+\gamma_1\\
+&=\alpha_1 x^2+(\alpha_1+\beta_1)x+(\alpha_1-\beta_1+\gamma_1)\\
+T(x-2)&=\alpha_2 (x^2+x+1)+\beta_2 (x-1)+\gamma_2\\
+&=\alpha_2 x^2+(\alpha_2+\beta_2)x+(\alpha_2-\beta_2+\gamma_2)
+\end{split}
+\end{equation*}
+
+~
+
+Also according to the linear transformation:
+
+\begin{equation*}
+\begin{split}
+T(x+1)&=x((x+1)+1)+(1+1)+\int^x_0 t+1 dt\\
+&=x^2+2x+2+\left[\frac{1}{2}t^2+t\right]^x_0\\
+&=x^2+2x+2+\frac{1}{2}x^2+x\\
+&=\frac{3}{2}x^2+3x+2\\
+T(x-2)&=x((x+1)-2)+(1-2)+\int^x_0 t-2 dt\\
+&=x^2-x-1+\left[\frac{1}{2}t^2-2t\right]^x_0\\
+&=x^2-x-1+(\frac{1}{2}x^2-2x)\\
+&=\frac{3}{2}x^2-3x-1\\
+\end{split}
+\end{equation*}
+
+From the two sets of equations above, we can see that:
+
+\begin{equation*}
+\begin{split}
+&\begin{cases}
+\alpha_1=\frac{3}{2}\\
+\alpha_1+\beta_1=3\\
+\alpha_1-\beta_1+\gamma_1=2\\
+\end{cases}\\
+\Rightarrow &\begin{cases}
+\alpha_1=\frac{3}{2}\\
+\beta_1=\frac{3}{2}\\
+\gamma_1=2\\
+\end{cases}\\
+&\begin{cases}
+\alpha_2=\frac{3}{2}\\
+\alpha_2+\beta_2=-3\\
+\alpha_2-\beta_2+\gamma_2=-1\\
+\end{cases}\\
+\Rightarrow &\begin{cases}
+\alpha_2=\frac{3}{2}\\
+\beta_2=-\frac{9}{2}\\
+\gamma_2=-7
+\end{cases}\\
+\end{split}
+\end{equation*}
+
+~
+
+Hence:
+$$
+\left[T\right]^\gamma_\beta=\begin{bmatrix}
+\frac{3}{2}&\frac{3}{2}\\
+\frac{3}{2}&-\frac{9}{2}\\
+2&-7\\
+\end{bmatrix}
+$$
+
+\subsection{Question b}
+
+\begin{equation*}
+\begin{split}
+T(3x-5) =&x(3(x+1)-5)+(3-5)+\int^x_0 3t-5 dt\\
+=&3x^2-2x-2+\left[\frac{3}{2}t^2-5t\right]^x_0\\
+=&3x^2-2x-2+(\frac{3}{2}x^2-5x)\\
+=&\frac{9}{2}x^2-7x-2\\
+\Rightarrow &\begin{cases}
+\alpha_p=\frac{9}{2}\\
+\alpha_p+\beta_p=-7\\
+\alpha_p-\beta_p+\gamma_p=-2\\
+\end{cases}\\
+\Rightarrow &\begin{cases}
+\alpha_p=\frac{9}{2}\\
+\beta_p=-\frac{23}{2}\\
+\gamma_p=-18\\
+\end{cases}\\
+\Rightarrow &\left[T(3x-5)\right]_\gamma=\begin{bmatrix}
+\frac{9}{2}\\
+-\frac{23}{2}\\
+-18\\
+\end{bmatrix}\\
+3x-5 =& m(x+1)+n(x-2)\\
+=&(m+n)x+(m-2n)\\
+\Rightarrow &\begin{cases}
+m+n=3\\
+m-2n=-5\\
+\end{cases}\\
+\Rightarrow &\begin{cases}
+m=\frac{1}{3}\\
+n=\frac{8}{3}\\
+\end{cases}\\
+\Rightarrow &\left[3x-5\right]_\beta =\begin{bmatrix}
+\frac{1}{3}\\
+\frac{8}{3}\\
+\end{bmatrix}\\
+\Rightarrow &\left[T\right]^\gamma_\beta\left[3x-5\right]_\beta\\
+=&\begin{bmatrix}
+\frac{5}{2}&\frac{3}{2}\\
+3&-\frac{9}{2}\\
+0&5\\
+\end{bmatrix} \begin{bmatrix}
+\frac{1}{3}\\
+\frac{8}{3}\\
+\end{bmatrix}\\
+&\left[T\right]^\gamma_\beta\left[p(x)\right]_\beta\\
+=&\begin{bmatrix}
+\frac{3}{2}&\frac{3}{2}\\
+\frac{3}{2}&-\frac{9}{2}\\
+2&-7\\
+\end{bmatrix}\begin{bmatrix}
+\frac{1}{3}\\
+\frac{8}{3}\\
+\end{bmatrix}\\
+=&\begin{bmatrix}
+\frac{9}{2}\\
+-\frac{23}{2}\\
+-18\\
+\end{bmatrix}\\
+=&\left[T(3x-5)\right]_\gamma\\
+\Rightarrow &\left[T(3x-5)\right]_\gamma=\left[T\right]^\gamma_\beta\left[p(x)\right]_\beta\\
+\end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 2}
+
+~
+
+Define $p(x)=ax^2+bx+c$
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+\begin{split}
+T(p(x))&=\frac{1}{x}\int^x_0(a(t+1)^2+b(t+1)+c)dt\\
+&=\frac{1}{x}\int^x_0(at^2+2at+a+bt+b+c)dt\\
+&=\frac{1}{x}\int^x_0(at^2+(2a+b)t+(a+b+c))dt\\
+&=\frac{1}{x}\left[\frac{1}{3}at^3+\frac{1}{2}(2a+b)t^2+(a+b+c)t\right]^x_0\\
+&=\frac{1}{x}(\frac{1}{3}ax^3+\frac{1}{2}(2a+b)x^2+(a+b+c)x)\\
+&=\frac{1}{3}ax^2+\frac{1}{2}(2a+b)x+(a+b+c)\\
+\end{split}
+\end{equation*}
+
+\subsubsection{One-to-one}
+
+~
+
+\begin{equation*}
+\begin{split}
+&\frac{1}{3}ax^2+\frac{1}{2}(2a+b)x+(a+b+c)=0\\
+\Rightarrow &\begin{cases}
+\frac{1}{3}a=0\\
+\frac{1}{2}(2a+b)=0\\
+a+b+c=0\\
+\end{cases}\\
+\Rightarrow &\begin{cases}
+a=0\\
+b=0\\
+c=0\\
+\end{cases}\rightarrow \text{trivial solution}\\
+\Rightarrow &\text{One-to-one}\\
+\end{split}
+\end{equation*}
+
+\subsubsection{Onto}
+
+~
+
+\begin{equation*}
+\begin{split}
+&\begin{bmatrix}
+\frac{1}{3}a\\
+\frac{1}{2}(2a+b)\\
+a+b+c\\
+\end{bmatrix}\\
+=&\begin{bmatrix}
+\frac{1}{3}&0&0\\
+1&\frac{1}{2}&0\\
+1&1&1\\
+\end{bmatrix}\begin{bmatrix}
+a\\
+b\\
+c\\
+\end{bmatrix}\\
+&\begin{bmatrix}
+\frac{1}{3}&0&0\\
+1&\frac{1}{2}&0\\
+1&1&1\\
+\end{bmatrix}\\
+\sim & \begin{bmatrix}
+1&0&0\\
+1&\frac{1}{2}&0\\
+1&1&1\\
+\end{bmatrix}\\
+\sim &\begin{bmatrix}
+1&0&0\\
+0&1&0\\
+1&1&1\\
+\end{bmatrix}\\
+\sim &\begin{bmatrix}
+1&0&0\\
+0&1&0\\
+0&0&1\\
+\end{bmatrix}\\
+\end{split}
+\end{equation*}
+
+~
+
+Since there is a pivot in every row, $T$ is onto.
+
+\subsection{Question b}
+
+~
+
+$$
+\beta=\{1,x,x^2\}
+$$
+
+~
+
+Define $\beta_U=\{1,x,x^2\}$ and $\beta_V=\{1,x,x^2\}$ for $p(x)$ and $T(p(x))$ respectively.
+
+\begin{equation*}
+\begin{split}
+T(1)=&\alpha_1+\beta_1 x+\gamma_1 x^2\\
+T(x)=&\alpha_2+\beta_2 x+\gamma_2 x^2\\
+T(x^2)=&\alpha_3+\beta_3 x+\gamma_3 x^2\\
+\end{split}
+\end{equation*}
+
+~
+
+According to the transformation:
+
+\begin{equation*}
+\begin{split}
+T(1)=& \frac{1}{x}\int^x_0 1dt\\
+=&\frac{1}{x}\left[t\right]^x_0\\
+=&\frac{1}{x}x\\
+=&1\\
+T(x)=&\frac{1}{x}\int^x_0 (t+1)dt\\
+=&\frac{1}{x}\left[\frac{1}{2}t^2+t\right]^x_0\\
+=&\frac{1}{x}(\frac{1}{2}x^2+x)\\
+=&\frac{1}{2}x+1\\
+T(x^2)=&\frac{1}{x}\int^x_0(t+1)^2dt\\
+=&\frac{1}{x}\int^x_0(t^2+2t+1)dt\\
+=&\frac{1}{x}\left[\frac{1}{3}t^3+t^2+t\right]^x_0\\
+=&\frac{1}{x}(\frac{1}{3}x^3+x^2+x)\\
+=&\frac{1}{3}x^2+x+1\\
+\end{split}
+\end{equation*}
+
+~
+
+From the two sets, we can see that:
+
+\begin{equation*}
+\begin{split}
+&\begin{cases}
+\alpha_1=1\\
+\beta_1=0\\
+\gamma_1=0\\
+\end{cases}\\
+&\begin{cases}
+\alpha_2=1\\
+\beta_2=\frac{1}{2}\\
+\gamma_2=0\\
+\end{cases}\\
+&\begin{cases}
+\alpha_3=1\\
+\beta_3=1\\
+\gamma_3=\frac{1}{3}\\
+\end{cases}\\
+\Rightarrow &M=\left[T\right]^\beta_\beta\begin{bmatrix}
+1&1&1\\
+0&\frac{1}{2}&1\\
+0&0&\frac{1}{3}\\
+\end{bmatrix}\\
+\end{split}
+\end{equation*}
+
+\subsubsection{Question c}
+
+~
+
+\begin{equation*}
+\begin{split}
+&\left[\begin{array}{ccc|ccc}
+1 & 1 & 1 & 1 & 0 & 0\\
+0 & \frac{1}{2} & 1 & 0 & 1 & 0\\
+0 & 0 & \frac{1}{3} & 0 & 0 & 1\\
+\end{array}\right]\\
+\sim &\left[\begin{array}{ccc|ccc}
+1 & 1 & 1 & 1 & 0 & 0\\
+0 & 1 & 2 & 0 & 2 & 0\\
+0 & 0 & 1 & 0 & 0 & 3\\
+\end{array}\right]\\
+\sim &\left[\begin{array}{ccc|ccc}
+1 & 1 & 1 & 1 & 0 & 0\\
+0 & 1 & 0 & 0 & 2 & -6\\
+0 & 0 & 1 & 0 & 0 & 3\\
+\end{array}\right]\\
+\sim &\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & -2 & 3\\
+0 & 1 & 0 & 0 & 2 & -6\\
+0 & 0 & 1 & 0 & 0 & 3\\
+\end{array}\right]\\
+\Rightarrow & M^{-1}=\left[\begin{array}{ccc}
+1&-2&3\\
+0&2&-6\\
+0&0&3\\
+\end{array}\right]\\
+\Rightarrow &\left[T\right]^\beta_\beta=\left[\begin{array}{ccc}
+1&-2&3\\
+0&2&-6\\
+0&0&3\\
+\end{array}\right]\\
+\Rightarrow &\begin{cases}
+T^{-1}(1)=1\\
+T^{-1}(x)=2x-2\\
+T^{-1}(x^2)=3x^2-6x+3\\
+\end{cases}\\
+\end{split}
+\end{equation*}
+
+So we can calculate $T^{-1}(ax^2+bx+c)$:
+
+\begin{equation*}
+\begin{split}
+T^{-1}(ax^2+bx+c)=&T^{-1}(ax^2)+T^{-1}(bx)+T^{-1}(c)\\
+=&aT^{-1}(x^2)+bT^{-1}(x)+cT^{-1}(1)\\
+=&a(3x^2-6x+3)+b(2x-2)+c\\
+=&3ax^2+(-6a+2b)x+(3a-2b+c)\\
+\end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 3}
+\subsection{Question a}
+
+~
+
+Let $x\in \ker(T)$, where $x$ is arbitrary.
+
+\begin{equation*}
+\begin{split}
+&T(x)=0_v\\
+&S(0_v)=0_w\\
+\Rightarrow & S(T(x))=0_w\\
+\Rightarrow &x \in \ker(S\circ T)\\
+\end{split}
+\end{equation*}
+
+~
+
+Since for arbitrary $x\in \ker(T)$ there is $x\in \ker(S\circ T) \Rightarrow \ker(T) \subseteq \ker(S\circ T)$
+
+~
+
+Let $w\in \im (S\circ T)$, where $w$ is arbitrary.
+
+\begin{equation*}
+\begin{split}
+&\exists u : w=S\circ T(u)=S(T(u))\\
+\Rightarrow &w=S(v) \land v=T(u)\\
+\Rightarrow &w\in\im(S)\\
+\end{split}
+\end{equation*}
+
+~
+
+Since for arbitrary $w\in \im (S\circ T)$ there is $w\in \im(S) \Rightarrow \im(S\circ T) \subseteq \im(S)$
+
+\subsection{Question b}
+
+~
+
+According to rank-nullity theorem:
+$$
+\dim(U)=\dim(\ker(T))+\dim(\im(T))
+$$
+
+~
+
+Also:
+$$
+\dim(U)=\dim(\ker(S\circ T))+\dim(\im(S\circ T))
+$$
+
+\begin{equation*}
+\begin{split}
+\Rightarrow &\dim(\ker(T))+\dim(\im(T))=\dim(\ker(S\circ T))+\dim(\im(S\circ T))\\
+\Rightarrow &\dim(\ker(S\circ T))-\dim(\ker(T))=\dim(\im(T))-\dim(\im(S\circ T))\\
+\end{split}
+\end{equation*}
+
+\subsection{Question c}
+
+~
+
+\begin{equation*}
+\tag{conclusion 1}
+\begin{split}
+\text{Let } &u\in \ker(\hat{S}) \subseteq \hat{V} \subseteq V\\
+\Rightarrow & \hat{S}(u)=0_w\\
+& \hat{S}(u) =S(u)=0_w\\
+\Rightarrow &u\in\ker(S)\\
+\text{Also, }&u\in\hat{V}=\im(T)\\
+\Rightarrow &u\in \ker(S)\cap\im(T)\\
+\Rightarrow &\ker(\hat{S}) \subseteq \ker(S)\cap\im(T) \rightarrow u\text{ is arbitrary in } \ker(\hat{S})\\
+\text{Let } & x\in \ker(S)\cap\im(T)\\
+\Rightarrow  & x \in \ker(S)\land x\in\im(T)\\
+\Rightarrow &S(x)=0_w\land x\in \hat{V}\\
+&S(x)=\hat{S}(x)=0_w\\
+\Rightarrow &\hat{S}(x)=0_w\land x\in\hat{V}\\
+\Rightarrow &x\in\ker(\hat{S})\\
+\Rightarrow &\ker(S)\cap\im(T)\subseteq\ker(\hat{S})\\
+&\ker(\hat{S}) \subseteq \ker(S)\cap\im(T)\\
+\Rightarrow &\ker(S)\cap\im(T)=\ker(\hat{S})
+\end{split}
+\end{equation*}
+
+~
+
+\begin{equation*}
+\tag{conclusion 2}
+\begin{split}
+\text{Let }&w \in \im(\hat{S})\\
+\Rightarrow &\exists m\in \hat{V} =\im(T) : \hat{S}(m)=w\\
+&\hat{S}(m)=S(m)=w\\
+&m=T(k) \rightarrow m\in \im(T)\\
+\Rightarrow &S(T(k))=w\\
+\Rightarrow &w\in\im (S\circ T)\\
+\Rightarrow &\im(\hat{S}) \subseteq\im (S\circ T)\\
+\text{Let } &v\in\im(S\circ T)\\
+\Rightarrow &S\circ T(p)=v\\
+&T(p)=q\in \hat{V}\\
+\Rightarrow &S(q)=w\\
+&S(q)=\hat{S}(q)=w\\
+\Rightarrow &q\in\im(\hat{S})\\
+\Rightarrow &\im(S\circ T)\subseteq\im(\hat{S})\\
+&\im(\hat{S}) \subseteq\im (S\circ T)\\
+\Rightarrow & \im(\hat{S}) =\im (S\circ T)
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\dim(\hat{V})=\dim(\ker(\hat{S}))+\dim(\im(\hat{S}))
+\end{equation*}
+
+\subsection{Question d}
+
+~
+
+\begin{equation*}
+\begin{split}
+\ker(S)\cap\im(T)=&\ker(\hat{S})\\
+\dim(\ker(S)\cap\im(T))=&\dim(\ker(\hat{S}))\\
+\im(\hat{S}) =&\im (S\circ T)\\
+\dim(\im(\hat{S}))=&\dim(\im (S\circ T))\\
+\dim(\ker(S\circ T))-\dim(\ker(T))=&\dim(\im(T))-\dim(\im(S\circ T))\\
+=&\dim(\hat{V})-\dim(\im(\hat{S}))\\
+=&\dim(\ker(\hat{S}))\rightarrow\text{rank-nullity theorem}\\
+=&\dim(\ker(S)\cap\im(T))\\
+\Rightarrow \dim(\ker(S\circ T))-\dim(\ker(T))=&\dim(\ker(S)\cap\im(T))\\
+\Rightarrow \dim(\ker(S\circ T))=&\dim(\ker(T))+\dim(\ker(S)\cap\im(T))\\
+\end{split}
+\end{equation*}
+
+\section{Problem 4}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+\begin{split}
+T(a,b,c)&=(a,a,c+b-a)\\
+T^2(a,b,c)&=T(T(a,b,c))\\
+&=T(a,a,c+b-a)\\
+&=(a,a,c+b-a+a-a)\\
+&=(a,a,c+b-a)\\
+&=T(a,b,c)\\
+\Rightarrow &T(a,b,c) \text{ is idempotent}\\
+\end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+~
+
+\begin{proof}
+
+~
+
+Proof by contradiction:
+
+~
+
+Suppose $u\ne 0_V \in \ker(T)\cap\im(T)$
+
+\begin{equation*}
+\begin{split}
+u\in\ker(T)\Rightarrow & T(u)=0_V\\
+u\in\im(T)\Rightarrow & \exists v\in V : T(v)=u\\
+T(u)=&T(T(v))=T^2(v)=0_V\\
+u\ne0\Rightarrow & T(v)\ne 0\\
+\Rightarrow v\notin \ker(T)\land & v\in ker(T^2)\\
+\Rightarrow \dim(\ker(T^2))\ne&\dim(\ker(T))\\
+T^2=T\Rightarrow & \dim(\ker(T^2))=\dim(\ker(T))\\
+\dim(\ker(T^2))=\dim(\ker(T))\land &\dim(\ker(T^2))\ne\dim(\ker(T)) \Rightarrow \bot\\
+\Rightarrow \ker(T)\cap&\im(T)=0_V\\
+\end{split}
+\end{equation*}
+\end{proof}
+
+\subsection{Question c}
+
+~
+
+\begin{equation*}
+\begin{split}
+&T \text{ is one-to-one}\\
+\Rightarrow&\dim(\ker{T})=0\\
+\Rightarrow&\dim(\im{T})=\dim(V)\\
+\Rightarrow&T \text{ is onto}\\
+\Rightarrow& T \text{ is inversible}\\
+\end{split}
+\end{equation*}
+
+Hence define $T^{-1}:V\rightarrow V$ is the inverse of $T$.
+
+\begin{equation*}
+\begin{split}
+T^2(v)&=T(v)\\
+\Rightarrow T\circ T(v)&=T(v)\\
+\Rightarrow T^{-1}\circ T\circ T(v)&=T^{-1}\circ T(v)\\
+\Rightarrow T(v)&=v\\
+\end{split}
+\end{equation*}
+
+\newpage
+
+\section{Problem 5}
+
+\subsection{Question a}
+
+~
+
+\begin{equation*}
+\begin{split}
+\text{Define } T(x)=Ax \land & S(x)=Bx\\
+(T+S)(x)=&T(x)+S(x)\\
+=&Ax+Bx\\
+=&(A+B)x\\
+\Rightarrow \im(T+S)=&\text{span}(A+B)\\
+\im(T)=&\text{span}(A)\\
+\im(S)=&\text{span}(B)\\
+\text{Define }M=&\text{span}(A\cap B)=\{v_1,v_2,...,v_r\}\\
+\text{Then we can also define: }&\\
+\text{span}(A)=A_1+M, A_1=\{u_1,u_2,...,u_m\}\land& \text{ span}(B)=B_1+M, B_1=\{w_1,w_2,...,w_n\}\\
+\Rightarrow \text{span}(A+B)=&\{v_1,v_2,...,v_r,u_1,u_2,...,u_m,w_1,w_2,...,w_n\}\\
+\{v_1,v_2,...,v_r,u_1,u_2,...,u_m,w_1,w_2,...,w_n\}\subseteq &\{v_1,v_2,...,v_r,u_1,u_2,...,u_m\}+\{v_1,v_2,...,v_r,w_1,w_2,...,w_n\}\\
+\Rightarrow \text{span}(A+B)\subseteq &\text{span}(A)+\text{span}(B)\\
+\Rightarrow \im(T+S)\subseteq &\im(T)+\im(S)\\
+\end{split}
+\end{equation*}
+
+\subsection{Question b}
+
+~
+
+\begin{equation*}
+\begin{split}
+A=\left[a_{mn}\right]\land &B=\left[b_{mn}\right]\land C=\left[c_{lm}\right]\\
+C(A+B)=&\left[c_{lm}\right](\left[a_{mn}\right]+\left[b_{mn}\right])\\
+=&[c_{lm}]\left[(a_{mn}+b_{mn})\right]\\
+=&\left[\sum^k_{m=1}c_{lk}(a_{kn}+b_{kn})\right]\\
+=&\left[\sum^k_{m=1}c_{lk}a_{kn}+\sum^k_{m=1}c_{lk}b_{kn}\right]\\
+=&\left[\sum^k_{m=1}c_{lk}a_{kn}\right]+\left[\sum^k_{m=1}c_{lk}b_{kn}\right]\\
+=&\left[c_{lm}a_{mn}\right]+\left[c_{lm}b_{mn}\right]\\
+=&CA+BA\\
+\end{split}
+\end{equation*}
+
+\newpage
+
+\section{Reference}
+
+\subsection{Collaborators}
+
+~
+
+Frank Zhu
+
+~
+
+Jeffery Shu
+\end{document}

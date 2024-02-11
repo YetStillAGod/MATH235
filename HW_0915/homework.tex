@@ -1,0 +1,630 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\def\R{\mathbb{R}}
+
+\begin{document}
+
+\section{Problem 1}
+
+~
+
+Define: $u=(a,b) \in V \land v=(c,d) \in V \land w=(e,f) \in V\land n\in \R \land m \in \R$
+
+\subsection{Closure}
+
+\subsubsection{Addition}
+
+~
+
+$u \boxplus v = (a + c + 1, b + d + 1)$.
+
+$u = (a,b) \in V \land v = (c,d) \in V \land V = \R^2 \Rightarrow a + c + 1 \in \R $. 
+
+For the same reason, $b + d + 1 \in \R $.
+
+As a result, $(a + c + 1, b + d + 1) \in \R^2 \Rightarrow u \boxplus v \in V$.
+
+
+\subsubsection{Multiplication}
+
+~
+
+$n \boxdot u = (n \cdot a - n + 1, n \cdot b - n + 1)$.
+
+$u = (a,b) \in V \land V = \R^2 \land n \in \R \Rightarrow n \cdot a - n + 1 \in \R $. 
+
+For the same reason, $n \cdot b - n + 1 \in \R$.
+
+As a result, $(n \cdot a - n + 1, n \cdot b - n + 1) \in \R^2 \Rightarrow n \boxdot u \in V$.
+
+\subsection{Commutative Addition}
+
+~
+
+$u \boxplus v = (a + c + 1, b + d + 1)$.
+
+$v \boxplus u = (c + a + 1, d + b + 1)$.
+
+$c+a+1=a+c+1 \land d+b+1=b+d+1 \Rightarrow u \boxplus v=v \boxplus u$
+
+\subsection{Associative Addition}
+
+~
+
+\begin{equation}
+\label{fo:1}
+\tag{1.3-1}
+\begin{split}
+& (u \boxplus v) \boxplus w \\
+= & (a+c+1,b+d+1) \boxplus w\\
+= & (a+c+1+e+1,b+d+1+f+1)\\
+= & (a+c+e+2,b+d+f+2)\\
+\end{split}
+\end{equation}
+
+\begin{equation}
+\label{fo:2}
+\tag{1.3-2}
+\begin{split}
+& u \boxplus (v \boxplus w) \\
+= & u \boxplus (c+e+1,d+f+1)\\
+= & (a+c+e+1+1,b+d+f+1+1)\\
+= & (a+c+e+2,b+d+f+2)\\
+\end{split}
+\end{equation}
+
+The results from \ref{fo:1} and \ref{fo:2} are the same. $\Rightarrow (u \boxplus v) \boxplus w =u \boxplus (v \boxplus w)$
+
+\subsection{Identity for Addition}
+
+~
+
+\begin{equation}
+\label{fo:3}
+\tag{1.4}
+\begin{split}
+& \overrightarrow{0} \boxplus u = (0,0) \\
+&\mathrm{Let} \overrightarrow{0} = (x,y)\\
+& a+x+1=a \land b+y+1=b\\
+& x=-1 \land y=-1\\
+&\overrightarrow{0} = (-1,-1)\\
+\end{split}
+\end{equation}
+
+\subsection{Inverse}
+
+~
+
+\begin{equation}
+\tag{1.5}
+\begin{split}
+& \overline{u}+u=\overrightarrow{0}\\
+& \overline{u}+(a,b)= (-1,-1)\\
+& (\overline{a} +a+1, \overline{b} +b+1 ) = (-1,-1)\\
+& \overline{a} = -a-2 \land \overline{b} =-b-2\\
+\Rightarrow & \overline{u} =(-a-2,-b-2) \in V\\
+\end{split}
+\end{equation}
+
+\subsection{Unit Property}
+
+~
+
+\begin{equation}
+\tag{1.5}
+\begin{split}
+1 \boxdot u &= (1 \times a -1+1,1\times b-1+1)\\
+&=(a,b)\\
+&=u\\
+\end{split}
+\end{equation}
+
+\subsection{Associative Multiplication}
+
+~
+
+\begin{equation}
+\tag{1.6}
+\begin{split}
+(m\cdot n) \boxdot u &= (mnx-mn+1,mny-mn+1)\\
+m\boxdot (n\boxdot u) &= m\boxdot (nx-n+1,ny-n+1)\\
+&=(mnx-mn+m-m+1,mny-mn+m-m+1)\\
+&=(mnx-mn+1,mny-mn+1)\\
+&=(m\cdot n) \boxdot u\\
+\end{split}
+\end{equation}
+
+\subsection{First Distributive}
+
+~
+
+\begin{equation}
+\tag{1.7}
+\begin{split}
+m \boxdot (u \boxplus v)&= m\boxdot(a+c+1,b+d+1)\\
+&=(m(a+c+1)-m+1,m(b+d+1)-m+1)\\
+&=(ma+mc+1,mb+md+1)\\
+m \boxdot u \boxplus m\boxdot v&=(ma-m+1,mb-m+1)\boxplus (mc-m+1,md-m+1)\\
+&=((ma-m+1)+(mc-m+1)+1,(mb-m+1)+(md-m+1)+1)\\
+&=(ma+mc-2m+3,mb+md-2m+3)\\
+&\ne m \boxdot (u \boxplus v)\\
+\end{split}
+\end{equation}
+
+~
+
+The distributive property is not verified.
+
+\subsection{Conclusion}
+
+~
+
+Since $V$ does not have every identities for vector space, $V$ is not a vector space over $\R$.
+
+~
+
+~
+
+\section{Problem 2}
+
+~
+
+Define $u=(u_1,u_2) \in V \land v=(v_1,v_2) \in V \land w=(w_1,w_2) \in V \land c \in \R \land d \in \R$
+
+\subsection{Closure}
+
+\subsubsection{Addition}
+
+~
+
+$u \boxplus v=(u_1+v_1,u_2+v_2)$.
+
+$u=(u_1,u_2) \in V \land v=(v_1,v_2) \in V \land V= \R^2 \Rightarrow u_1+u_2 \in \R$.
+
+For the same reason, $u_2+v_2 \in \R$.
+
+As a result, $(u_1+v_1,u_2+v_2) \in \R^2 \Rightarrow u \boxplus v \in V$.
+
+\subsubsection{Multiplication}
+
+~
+
+$c\boxdot u=(\lvert c\rvert u_1,\lvert c\rvert u_2)$.
+
+$u=(u_1,u_2) \in V \land V = \R^2 \land c \in \R \Rightarrow \lvert c\rvert u_1 \in \R$.
+
+For the same reason, $\lvert c \rvert u_2 \in \R$.
+
+As a result, $(\lvert c\rvert u_1, \lvert c\rvert u_2) \in \R^2 \Rightarrow c\boxdot u \in V$.
+
+\subsection{Commutative Addition}
+
+~
+
+\begin{equation}
+\tag{2.2-1}
+\begin{split}
+u \boxplus v & = (u_1,u_2) \boxplus (v_1,v_2)\\
+& =(u_1+v_1,u_2+v_2)\\
+\end{split}
+\end{equation}
+
+\begin{equation}
+\tag{2.2-2}
+\begin{split}
+v \boxplus u & = (v_1,v_2) \boxplus(u_1,u_2)\\
+& = (v_1+u_1,v_2+u_2)\\
+\end{split}
+\end{equation}
+
+$(u_1+v_1,u_2+v_2) = (v_1+u_1,v_2+u_2) \Rightarrow u \boxplus v = v \boxplus u$
+
+\subsection{Associative Addition}
+
+~
+
+\begin{equation}
+\tag{2.3-1}
+\begin{split}
+(u \boxplus )v\boxplus w & = (u_1+v_1,u_2,v_2)\boxplus w\\
+& =(u_1+v_1+w_1,u_2+v_2+w_2)\\
+\end{split}
+\end{equation}
+
+\begin{equation}
+\tag{2.3-2}
+\begin{split}
+u \boxplus (v\boxplus w) & = u \boxplus (v_1+w_1,v_2+w_2)\\
+& = (u_1+v_1+w_1,u_2+u_2+w_2)\\
+\end{split}
+\end{equation}
+
+$(u_1+v_1+w_1,u_2+u_2+w_2)=(u_1+v_1+w_1,u_2+u_2+w_2) \Rightarrow (u \boxplus )v\boxplus w = u \boxplus (v\boxplus w)$
+
+\subsection{Identity of Addition}
+
+~
+
+\begin{equation}
+\tag{2.4-1}
+\begin{split}
+\overrightarrow{0} +u&=(0,0)+(u_1,u_2)\\
+&=(u_1,u_2)\\
+\end{split}
+\end{equation}
+
+$(u_1,u_2)=(u_1,u_2)\Rightarrow \overrightarrow{0}+u=u$
+
+\subsection{Inverse}
+
+~
+
+Define $\overline{u}$ such that $\overline{u} +u=\overrightarrow{0}$
+
+\begin{equation}
+\tag{2.5-1}
+\begin{split}
+\overline{u}+u&=\overrightarrow{0}\\
+\overline{u}&=\overrightarrow{0}-u\\
+&=(0,0)-(u_1,u_2)\\
+&=(-u_1,-u_2) \in V\\
+\end{split}
+\end{equation}
+
+$\Rightarrow$ inverse of $u \in V$
+
+\subsection{Unit Property}
+
+~
+
+\begin{equation}
+\tag{2.6-1}
+\begin{split}
+1 \boxdot u &= (\lvert 1\rvert u_1,\lvert 1\rvert u_2) \\
+&=(u_1,u_2)\\
+&=u
+\end{split}
+\end{equation}
+
+\subsection{Associative Multiplication}
+
+~
+
+\begin{equation}
+\tag{2.7-1}
+\begin{split}
+(c \cdot d) \boxdot u &= (\lvert cd \rvert u_1,\lvert cd\rvert u_2)\\
+c \boxdot (d \boxdot u) &= c\boxdot (\lvert d\rvert u_1,\lvert d\rvert u_2)\\
+&= (\lvert c\rvert \lvert d\rvert u_1, \lvert c\rvert \lvert d \rvert u_2)\\
+&= (\lvert cd \rvert u_1,\lvert cd\rvert u_2)\\
+&= (c \cdot d) \boxdot u\\
+\end{split}
+\end{equation}
+
+\subsection{First Distributive}
+
+~
+
+\begin{equation}
+\tag{2.8-1}
+\begin{split}
+c \boxdot (u \boxplus v) &= c \boxdot (u_1+v_1,u_2+v_2)\\
+&= (\lvert c\rvert (u_1+v_1),\lvert c\rvert (u_2+v_2))\\
+&= (\lvert c\rvert u_1+\lvert c\rvert v_1, \lvert c\rvert u_2+\lvert c\rvert v_2)\\
+c \boxdot u \boxplus c\boxdot v &= (\lvert c\rvert u_1,\lvert c\rvert u_2) \boxplus (\lvert c\rvert v_1,v_2)\\
+&= (\lvert c\rvert u_1+\lvert c\rvert v_1, \lvert c\rvert u_2+\lvert c\rvert v_2)\\
+\Rightarrow c \boxdot (u \boxplus v) &=c \boxdot u \boxplus c\boxdot v\\
+\end{split}
+\end{equation}
+
+\subsection{Second Distributive}
+
+~
+
+\begin{equation}
+\tag{2.9-1}
+\begin{split}
+(c+d)\boxdot u &= (\lvert c+d\rvert u_1,\lvert c+d\rvert u_2)\\
+c\boxdot u \boxplus d\boxdot u &= (\lvert c\rvert u_1,\lvert c\rvert u_2) \boxplus (\lvert d\rvert u_1,\lvert d\rvert u_2)\\
+&=((\lvert c\rvert + \lvert d\rvert)u_1,(\lvert c\rvert + \lvert d\rvert)u_2)\\
+\lvert c+d\rvert &\ne \lvert c\rvert + \lvert d\rvert\\
+\Rightarrow (c+d)\boxdot u &\ne c\boxdot u \boxplus d\boxdot u\\
+\end{split}
+\end{equation}
+
+
+\subsection{Conclusion}
+
+~
+
+Since $V$ does not fit in the Second Distributive, $V$ is not a vector space over $\R$.
+
+~
+
+~
+
+\section{Problem 3}
+
+\subsection{Question a}
+
+\subsubsection{Proof}
+
+~
+
+In $\boxplus$ test for $W$:
+
+Define $a=(a_1,a_2) \in W \land b=(b_1,b_2) \in W$.
+
+$W=\{ (x,y) | xy \geqslant 0 \} \Rightarrow a_1 a_2 \geqslant 0 \land b_1 b_2 \geqslant 0$.
+
+$a \boxplus b= (a_1+b_1,a_2+b_2)$
+
+According to the definition: 
+\begin{equation}
+\tag{3.1.1-1}
+\label{eq:1}
+\begin{split}
+&(a_1+b_1)(a_2+b_2) \\
+= & a_1 a_2+a_1 b_2+b_1 a_2+b_1 b_2\\
+= & (a_1 a_2+b_1 b_2)+(a_1 b_2+b_1 a_2)
+\end{split}
+\end{equation}
+
+Only the first bracket in \ref{eq:1} must $\geqslant 0$, where the second bracket may $\leqslant 0$, making $(a_1+b_1)(a_2+b_2) \leqslant 0$.
+
+\subsubsection{Conclusion}
+
+~
+
+So $W$ is not closed, and is not a subspace for $V=\R^2$
+
+~
+
+\subsection{Question b}
+
+~
+
+Define $n=(n_1,n_2,n_3) \in W \land m=(m_1,m_2,m_3) \in W$
+
+\subsubsection{Zero Vector}
+
+~
+
+For $n=(n_1,n_2,n_3) \in W$, we can let $n_1=n_2=n_3=0$ so that $n=(0,0,0)=\overrightarrow{0} \land 2n_2=n_1-3n_3 \Rightarrow \overrightarrow{0} \in W$
+
+\subsubsection{Addition}
+
+~
+
+\begin{equation}
+\tag{3.2.2-1}
+\label{eq:2}
+n\boxplus m=(n_1+m_1,n_2+m_2,n_3+m_3)
+\end{equation}
+
+\begin{equation}
+\tag{3.2.2-2}
+\label{eq:3}
+\begin{split}
+W & =\{(x,y,z)|2y=x-3z\} \\
+\Rightarrow 2n_2 & = n_1-3n_3 \\
+2m_2 & = m_1-3m_3 \\
+\end{split}
+\end{equation}
+
+We can see that the vector in \ref{eq:2} has the requirement that $2(n_2+m_2)=(n_1+m_1)-3(n_3+m_3)$.
+
+Adding the two equations in \ref{eq:3}: $2(n_2+m_2)=(n_1+m_1)-3(n_3+m_3)$, which fills in the requirement.
+
+So $n\boxplus m \in W$
+
+\subsubsection{Multiplication}
+
+~
+
+Define $c \in \R$: $c \boxdot n = (3n_1,3n_2,3n_3)$.
+
+We can see that $3n_2=3n_1-3n_3$ is required for $\boxdot$ test.
+
+Dividing both sides by 3: $2n_2=n_1-3n_3$, which equality is established.
+
+\subsubsection{Conclusion}
+
+~
+
+Since $W$ with these operations are valid under addition and multiplication with $\overrightarrow{0} \in W$, $W$ is a subspace of $V = \R^3$.
+
+\subsection{Question c}
+
+Define $p_1(x)=a_1x^4+b_1x^3+c_1x^2+d_1x+e_1 \land p_2(x)=a_2x^4+b_2x^3+c_2x^2+d_2x+e_2 \land n \in \R$
+
+\subsubsection{Zero Vector}
+
+~
+
+$\overrightarrow{0} \in W$ since $0x^4+0x^3+0x^2+0x+0=0 \in W$.
+
+\subsubsection{Addition}
+
+~
+
+\begin{equation}
+\tag{3.3.2-1}
+\begin{split}
+p_1(x)\boxplus p_2(x)&=a_1x^4+b_1x^3+c_1x^2+d_1x+e_1+a_2x^4+b_2x^3+c_2x^2+d_2x+e_2\\
+&= (a_1+a_2)x^4+(b_1+b_2)x^3+(c_1+c_2)x^2+(d_1+d_2)x+(e_1+e_2)\\
+p_1(1)\boxplus p_2(1)&=a_1+a_2+b_1+b_2+c_1+c_2+d_1+d_2+e_1+e_2\\
+&=(a_1+b_1+c_1+d_1+e_1)+(a_2+b_2+c_2+d_2+e_2)\\
+p_1(1)&=a_1+b_1+c_1+d_1+e_1=0\\
+p_2(1)&=a_2+b_2+c_2+d_2+e_2=0\\
+&\Rightarrow (a_1+b_1+c_1+d_1+e_1)+(a_2+b_2+c_2+d_2+e_2) =0\\
+&\Rightarrow p_1(1)\boxplus p_2(1)=0\\
+&\Rightarrow p_1(x)\boxplus p_2(x) \in W\\
+\end{split}
+\end{equation}
+
+\subsubsection{Multiplication}
+
+~
+
+\begin{equation}
+\tag{3.3.3-1}
+\begin{split}
+n \boxdot p_1(x) &= n \cdot (a_1x^4+b_1x^3+c_1x^2+d_1x+e_1)\\
+p_1(1) &= a_1 +b_1+c_1+d_1+e_1 = 0\\
+\Rightarrow n \boxdot p_1(1)&=n\cdot (a_1 +b_1+c_1+d_1+e_1)\\
+&= n\cdot 0\\
+&= 0\\
+\Rightarrow n \boxdot p_1(x) \in W\\
+\end{split}
+\end{equation}
+
+\subsubsection{Conclusion}
+
+~
+
+Since $W$ with these operations are valid under addition and multiplication with $\overrightarrow{0} \in W$, $W$ is a subspace of $V = P_4(\R)$.
+
+\subsection{Question d}
+
+\subsubsection{Proof}
+
+~
+
+In Zero Vector test, $\mathrm{det} \overrightarrow{0} = 0 \ne 1$.
+
+So $W$ dos not meet the zero vector requirement. 
+
+\subsubsection{Conclusion}
+
+~
+
+$W$ is not a subspace of $V=M_{n\times n}(\R)$. 
+
+\section{Problem 4}
+
+~
+
+\subsection{Question a}
+
+~
+
+Define $V=\R^2 \land a\in V_1=\{(x,y)|y=0\} \land b\in V_2=\{(x,y)|x=0\}$. 
+
+Then we can define $a=(a,0) \land b=(0,b)$.But $a+b=(a,b)\notin V_1 \cup V_2 \Rightarrow V_1 \cup V_2$ is not a subspace.
+
+\subsection{Question b}
+
+~
+
+Define $V=\mathbb{C} \land a\in V_1=\{x|x\in\R\} \land b\in V_2=\{x|x\in \mathbb{Q}\}$.
+
+According to the definition: $V_2\subset V_1 \Rightarrow V_2\cup V_1=V_2$, which is a subspace of $V$.
+
+\section{Problem 5}
+
+\subsection{Question a}
+
+~
+
+$W_1\cap W_2= \{x+y+z=0\land x+2y-z=0\}$
+
+$\begin{bmatrix}
+x&y&z\\
+x&2y&-z\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 1 & 1 \\
+1 & 2 & -1 \\
+\end{bmatrix}
+\times
+\begin{bmatrix}
+x\\
+y\\
+z\\
+\end{bmatrix}
+$
+
+$\begin{bmatrix}
+1& 1 & 1 \\
+1 & 2 & -1 \\
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1&1&1\\
+0&1&-2\\
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1&0&3\\
+0&1&-2\\
+\end{bmatrix}
+$
+
+The vector that spans the matrix above is $[-3,2,1]$ which $\in V=\R^3$.
+
+\subsection{Question b}
+
+\subsubsection{Zero Vector}
+
+~
+
+$W_1$ is a subspace of $V \Rightarrow w_1$ can be $\overrightarrow{0}$.
+
+For the same reason, $w_2=\overrightarrow{0}$.
+
+$\Rightarrow w_1+w_2=\overrightarrow{0}$
+
+\subsubsection{Addition}
+
+~
+
+Define $u_1\in W \land u_2\in W$, then there must be $a+b=u_1$ such that $a\in W_1\land b\in W_2$.
+
+For the same reason, $u_2 =c+d$, where $c\in W_1 \land d\in W_2$.
+
+$u_1 \boxplus u_2 = a+b+c+d=(a+c)+(b+d)$, where $a+c \in W_1\land b+d\in W_2$.
+
+$\Rightarrow u_1 \boxplus u_2 \in W$.
+
+\subsubsection{Multiplication}
+
+~
+
+Define $u_1=a+b\in W \land a \in W_1\land b\in W_2\land c\in \R$.
+
+$$
+c\boxdot u_1 = c(a+b)= c\cdot a+c\cdot b
+$$
+
+$a \in W_1 \Rightarrow c\cdot a\in W_1$
+
+For the same reason: $c\cdot b\in W_2$
+
+$\Rightarrow c \boxdot u_1 \in W$
+
+\subsubsection{Conclusion}
+
+~
+
+Since $W$ with these operations are valid under addition and multiplication with $\overrightarrow{0} \in W$, $W$ is a subspace of $V$.
+
+\newpage
+ 
+\section{Reference}
+
+\subsection{Collaborator}
+
+~
+
+Frank Zhu
+
+~
+
+Jeffery Shu
+\end{document}
